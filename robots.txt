@@ -1,0 +1,10 @@
+# Notice: Collection of data on The Prodigious People through automated means is
+# prohibited unless you have express written permission from The Prodigious People
+# and may only be conducted for the limited purpose.
+
+User-agent: *
+Disallow: /assets
+Disallow: /explore/assets
+Disallow: /404.html
+
+Sitemap: https://theprodigiouspeople.com/sitemap.xml
