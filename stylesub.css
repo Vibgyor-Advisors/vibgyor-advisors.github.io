@@ -1,4 +1,4 @@
-#tophr {
+.tophr {
     border: 3px solid rgb(178, 126, 4);
     width: 19%;
 }
@@ -42,14 +42,6 @@
     }
 }
 
-.table> :not(caption)>*>* {
-    /* padding: 1rem 1.4rem; */
-    -webkit-transition: background-color .2s ease-in;
-    transition: background-color .2s ease-in;
-    background-image: none;
-    background-color: var(--bs-table-accent-bg);
-}
-
 
 /* sectioncolor */
 
@@ -60,3 +52,11 @@
 .sectioncolor2 {
     background-color: rgb(253, 250, 250)
 }
+
+
+/* /////////////// */
+
+
+/* #Vissionp {
+    font-size: 15px;
+} */

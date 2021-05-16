@@ -20,7 +20,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Sign Up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.png">
@@ -35,9 +35,9 @@
     <link rel="stylesheet" href="/assets/css/vendor/aos.css">
     <!-- Facebook Pixel Code -->
     <script>
-        ! function (f, b, e, v, n, t, s) {
+        ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
-            n = f.fbq = function () {
+            n = f.fbq = function() {
                 n.callMethod ?
                     n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
@@ -58,210 +58,199 @@
     </script>
     <!-- End Facebook Pixel Code -->
     <style>
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 10px;
+        }
         
-
-.separator {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 20px 10px;
-}
-
-.separator::before,
-.separator::after {
-  content: '';
-  flex: 1;
-  border-bottom: 0.5px solid grey;
-}
-
-.separator:not(:empty)::before {
-  margin-right: .25em;
-}
-
-.separator:not(:empty)::after {
-  margin-left: .25em;
-}
-
-.social-network {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-right: 1vw;
-}
-
-.social-network li {
-  display: inline;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  margin: 1vw;
-}
-
-.social-circle li a {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  color: #fff;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  text-align: center;
-  width: 45px;
-  height: 45px;
-  font-size: 30px;
-}
-
-.social-circle li a:hover i,
-.triggeredHover {
-  color: #fff;
-  -moz-transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -ms--transform: rotate(360deg);
-  transform: rotate(360deg);
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
-}
-
-
-
-.login-popup .box2 {
-  background-color: #ffffff;
-  height: auto;
-  
-  width: auto;
-  
-  border-radius: 2%;
-}
-
-
-
-.box p {
-  padding-top: 12px;
-  text-align: center;
-}
-
-.login-popup{
-    margin:4%;
-}
-
-
-
-.login-popup.show .box {
-  opacity: 1;
-  margin-left: 0;
-  padding: 1vw;
-}
-
-.login-popup .box .form {
-  position: relative;
-  display: none;
-}
-
-.login-popup .box .active {
-  display: block;
-}
-
-.login-popup .box {
-  width: 100%;
-  height: 100%;
-}
-
-.login-popup .box .form  h1{
- 
- text-align: center;
-}
-
-.login-popup .box .form .form-control {
-  height: 45px;
-  margin-bottom: 30px;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #cccccc;
-  font-size: 15px;
-  color: #000000;
-}
-
-.login-popup .box .form .form-control:focus {
-  outline: none;
-}
-
-.login-popup .box .form label {
-  font-size: 15px;
-  color: #555555;
-}
-
-.login-popup .box .btn {
-  position: relative;
-  width: 40%;
-  margin: auto;
-  margin-top: 4%;
-  margin-left: 6%;
-  height: 45px;
-  border: none;
-  outline: none;
-  border-radius: 25px;
-  background: transparent;
-  font-size: 15px;
-  text-transform: uppercase;
-  color: #f45485;
-  border: 2px solid #f45485;
-  cursor: pointer;
-}
-
-.login-popup .box .btn:hover {
-  color: #f45485;
-  background: transparent;
-}
-
-.login-popup .box .activebtn {
-  background: #f45485;
-  color: white;
-}
-
-.login-popup .box .submit {
-  margin-left: 30%;
-  background: #13A89E;
-  color: white;
-  border: none;
-  width: 40%;
-  margin: 0 30%;
-  margin-top: 4%;
-  outline: none;
-  border-radius: 25px;
-  height: 45px;
-  cursor: pointer;
-}
-
-.login-popup .box .submit:hover {
-  color: #13A89E;
-  border: 2px solid #13A89E;
-  background: transparent;
-}
-
-.login-popup .box .form .btn:focus {
-  outline: none;
-}
-
-#forgot {
-  cursor: pointer;
-}
-
-.box2{
-    box-shadow: #555555;
-}
-@media only screen and (min-width:980px){
-    .section-title--2{
-        position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-    }
-}
+        .separator::before,
+        .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 0.5px solid grey;
+        }
+        
+        .separator:not(:empty)::before {
+            margin-right: .25em;
+        }
+        
+        .separator:not(:empty)::after {
+            margin-left: .25em;
+        }
+        
+        .social-network {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            margin-right: 1vw;
+        }
+        
+        .social-network li {
+            display: inline;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin: 1vw;
+        }
+        
+        .social-circle li a {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            color: #fff;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            text-align: center;
+            width: 45px;
+            height: 45px;
+            font-size: 30px;
+        }
+        
+        .social-circle li a:hover i,
+        .triggeredHover {
+            color: #fff;
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -ms--transform: rotate(360deg);
+            transform: rotate(360deg);
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            -ms-transition: all 0.2s;
+            transition: all 0.2s;
+        }
+        
+        .login-popup .box2 {
+            background-color: #ffffff;
+            height: auto;
+            width: auto;
+            border-radius: 2%;
+        }
+        
+        .box p {
+            padding-top: 12px;
+            text-align: center;
+        }
+        
+        .login-popup {
+            margin: 4%;
+        }
+        
+        .login-popup.show .box {
+            opacity: 1;
+            margin-left: 0;
+            padding: 1vw;
+        }
+        
+        .login-popup .box .form {
+            position: relative;
+            display: none;
+        }
+        
+        .login-popup .box .active {
+            display: block;
+        }
+        
+        .login-popup .box {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .login-popup .box .form h1 {
+            text-align: center;
+        }
+        
+        .login-popup .box .form .form-control {
+            height: 45px;
+            margin-bottom: 30px;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #cccccc;
+            font-size: 15px;
+            color: #000000;
+        }
+        
+        .login-popup .box .form .form-control:focus {
+            outline: none;
+        }
+        
+        .login-popup .box .form label {
+            font-size: 15px;
+            color: #555555;
+        }
+        
+        .login-popup .box .btn {
+            position: relative;
+            width: 40%;
+            margin: auto;
+            margin-top: 4%;
+            margin-left: 6%;
+            height: 45px;
+            border: none;
+            outline: none;
+            border-radius: 25px;
+            background: transparent;
+            font-size: 15px;
+            text-transform: uppercase;
+            color: #f45485;
+            border: 2px solid #f45485;
+            cursor: pointer;
+        }
+        
+        .login-popup .box .btn:hover {
+            color: #f45485;
+            background: transparent;
+        }
+        
+        .login-popup .box .activebtn {
+            background: #f45485;
+            color: white;
+        }
+        
+        .login-popup .box .submit {
+            margin-left: 30%;
+            background: #13A89E;
+            color: white;
+            border: none;
+            width: 40%;
+            margin: 0 30%;
+            margin-top: 4%;
+            outline: none;
+            border-radius: 25px;
+            height: 45px;
+            cursor: pointer;
+        }
+        
+        .login-popup .box .submit:hover {
+            color: #13A89E;
+            border: 2px solid #13A89E;
+            background: transparent;
+        }
+        
+        .login-popup .box .form .btn:focus {
+            outline: none;
+        }
+        
+        #forgot {
+            cursor: pointer;
+        }
+        
+        .box2 {
+            box-shadow: #555555;
+        }
+        
+        @media only screen and (min-width:980px) {
+            .section-title--2 {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
     </style>
 </head>
 
@@ -304,7 +293,7 @@
                         <div class="section-title section-title--2 text-center mb--30">
                             <div class="about-inner inner">
                                 <div class="section-title">
-                                    
+
                                     <p class="description"><b>
                                         True to our name we hold our clients and their money in way which works for them and shine in all 
                                         7 colours like a Vibgyor.
@@ -320,54 +309,54 @@
                     <div class="col-lg-6">
                         <div class="login-popup">
                             <div class="box2">
-                      
-                              <!-- <div class="sign-head">
+
+                                <!-- <div class="sign-head">
                                 <div class="close">&times;</div> 
                               </div> -->
-                      
-                              <div class="box">
-                                <div class="form log active">
-                                  <h1>Log In</h1>
-                                  <input type="text" id="logemail" placeholder="Email *" class="form-control" required>
-                                  <input type="password" id="logpassword" placeholder="Password *" class="form-control" required>
-                                  <a id="forgot">Forgot Password?</a>
-                      
-                                  <button id="logsubmit" type="submit" class="submit">Submit</button>
-                      
-                                  <div class="separator">or login with</div>
-                      
-                                  <ul class="social-network social-circle">
-                                   
-                                    <li><a id="googlelog" class="icon-google"><i class="fab fa-google"></i></a></li>
-                                  </ul>
+
+                                <div class="box">
+                                    <div class="form log active">
+                                        <h1>Log In</h1>
+                                        <input type="text" id="logemail" placeholder="Email *" class="form-control" required>
+                                        <input type="password" id="logpassword" placeholder="Password *" class="form-control" required>
+                                        <a id="forgot">Forgot Password?</a>
+
+                                        <button id="logsubmit" type="submit" class="submit">Submit</button>
+
+                                        <div class="separator">or login with</div>
+
+                                        <ul class="social-network social-circle">
+
+                                            <li><a id="googlelog" class="icon-google"><i class="fab fa-google"></i></a></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="form sign">
+                                        <h1>Sign Up</h1>
+                                        <input type="text" id="firstname" placeholder="First Name *" class="form-control" required>
+                                        <input type="text" id="lastname" placeholder="Last Name *" class="form-control" required>
+                                        <input type="text" id="email" placeholder="Email *" class="form-control" required>
+                                        <input type="password" id="password" placeholder="Password *" class="form-control" required>
+                                        <br>
+                                        <button id="signsubmit" type="submit" class="submit">Submit</button>
+                                        <br>
+                                    </div>
+
+                                    <button type="button" class="btn signbtn">Sign Up</button>
+                                    <button type="button" class="btn logbtn activebtn">Log In</button>
+
                                 </div>
-                      
-                                <div class="form sign">
-                                    <h1>Sign Up</h1>
-                                  <input type="text" id="firstname" placeholder="First Name *" class="form-control" required>
-                                  <input type="text" id="lastname" placeholder="Last Name *" class="form-control" required>
-                                  <input type="text" id="email" placeholder="Email *" class="form-control" required>
-                                  <input type="password" id="password" placeholder="Password *" class="form-control" required>
-                                  <br>
-                                  <button id="signsubmit" type="submit" class="submit">Submit</button>
-                                  <br>
-                                </div>
-                      
-                                <button type="button" class="btn signbtn">Sign Up</button>
-                                <button type="button" class="btn logbtn activebtn">Log In</button>
-                      
-                              </div>
-                      
+
                             </div>
-                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Breadcrump Area  -->
         <!-- Start Page Wrapper  -->
-       
-            
+
+
         <!-- End Page Wrapper  -->
 
         <!-- Footer -->
@@ -383,7 +372,7 @@
                             </li>
                         </ul>
                     </div>
-    
+
                     <div class="col-sm-12 col-md-4">
                         <h6>Connect Us</h6>
                         <ul class="footer-links">
@@ -392,11 +381,12 @@
                             <li><i class="fas fa-tty"></i>&emsp;022-79615327</li>
                         </ul>
                     </div>
-    
+
                     <div class="col-sm-12 col-md-4">
-                        <iframe allowfullscreen="" height="200" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15078.107039611577!2d72.9252541!3d19.128406!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x13327f48a2d2f09f!2sVibgyor%20Advisors!5e0!3m2!1sen!2sin!4v1618731120950!5m2!1sen!2sin"
-                            style="border:0;" width="350"></iframe>
-    
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4483.712803053567!2d72.91082386943492!3d19.09282140785004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c7cc36cfdd89%3A0x108837ab2c1bc1f!2sSwastik%20Disa%20Corporate%20Park!5e0!3m2!1sen!2sin!4v1620983347252!5m2!1sen!2sin"
+                            width="300" height="180" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
                     </div>
                 </div>
                 <hr style="color:#cc2e72;">
@@ -405,7 +395,7 @@
                 <div class="row">
                     <div class="col-md-8 col-sm-6 col-xs-12">
                         <p class="copyright-text"> Division of Vibgyor Advicorpr PVT Limited &copy; 2019
-    
+
                         </p>
                     </div>
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -416,7 +406,7 @@
                             <li><a class="linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
                         </ul>
                     </div>
-    
+
                 </div>
             </div>
         </footer>
@@ -439,28 +429,28 @@
     <!-- Main JS -->
     <script src="/assets/js/main.js"></script>
 
-    
+
 
     <script src="/assets/js/connect.js"></script>
     <script src="/assets/js/vendor/aos.js"></script>
     <script>
         AOS.init();
     </script>
-     <script>
-         document.querySelector(".signbtn").addEventListener("click", function () {
-  document.querySelector(".sign").classList.add("active");
-  document.querySelector(".signbtn").classList.add("activebtn");
-  document.querySelector(".log").classList.remove("active");
-  document.querySelector(".logbtn").classList.remove("activebtn");
-});
+    <script>
+        document.querySelector(".signbtn").addEventListener("click", function() {
+            document.querySelector(".sign").classList.add("active");
+            document.querySelector(".signbtn").classList.add("activebtn");
+            document.querySelector(".log").classList.remove("active");
+            document.querySelector(".logbtn").classList.remove("activebtn");
+        });
 
-document.querySelector(".logbtn").addEventListener("click", function () {
-  document.querySelector(".log").classList.add("active");
-  document.querySelector(".logbtn").classList.add("activebtn");
-  document.querySelector(".sign").classList.remove("active");
-  document.querySelector(".signbtn").classList.remove("activebtn");
-});
-     </script>
+        document.querySelector(".logbtn").addEventListener("click", function() {
+            document.querySelector(".log").classList.add("active");
+            document.querySelector(".logbtn").classList.add("activebtn");
+            document.querySelector(".sign").classList.remove("active");
+            document.querySelector(".signbtn").classList.remove("activebtn");
+        });
+    </script>
 </body>
 
 </html>
