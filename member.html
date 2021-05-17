@@ -93,7 +93,7 @@
 
         <section class="sectioncolor1">
             <hr class="divderhr">
-            <div class="container firstdiv">
+            <div class="container firstdiv" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="row">
                     <div class="col-md-7">
@@ -131,7 +131,7 @@
         <section class="sectioncolor2">
             <hr class="divderhr">
 
-            <div class="container firstdiv">
+            <div class="container firstdiv" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="row">
                     <div class="col-5 col-md-5  ">
@@ -167,7 +167,7 @@
         </section>
         <section class="sectioncolor1">
             <hr class=" divderhr ">
-            <div class="container firstdiv ">
+            <div class="container firstdiv" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="row ">
                     <div class="col-md-7 ">
@@ -200,7 +200,7 @@
 
             <hr class="divderhr ">
 
-            <div class="container firstdiv ">
+            <div class="container firstdiv" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
                 <!-- Stack the columns on mobile by making one full-width and the other half-width -->
                 <div class="row ">
                     <div class="col-5 col-md-5 ">
@@ -325,7 +325,11 @@
 
         <script src="/assets/js/vendor/aos.js"></script>
         <script>
-            AOS.init();
+            AOS.init({
+                offset: 250, // offset (in px) from the original trigger point
+                delay: 90, // values from 0 to 3000, with step 50ms
+                duration: 800,
+            });
         </script>
 
 
