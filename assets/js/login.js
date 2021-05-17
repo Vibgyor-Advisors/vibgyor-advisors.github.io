@@ -15,6 +15,7 @@ document.getElementById("googlelog").addEventListener("click", function GoogleLo
         provider: "google",
         loginDate: new Date(),
       });
+      window.location.href="offer.html"
     }).catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -62,8 +63,8 @@ document.getElementById("signsubmit").addEventListener("click", function Registe
           provider: "custom",
           dateCreated: new Date(),
         });
-  
-        
+        setTimeout(function(){  window.location.href="offer.html"}, 3000);
+       
       }).catch(function (error) {
         var errorcode = error.code;
         var errormsg = error.message;
@@ -83,6 +84,7 @@ document.getElementById("signsubmit").addEventListener("click", function Registe
       firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
         
         alert("Logged in");
+        setTimeout(function(){  window.location.href="offer.html"}, 3000);
       }).catch(function (error) {
         var errorCode = error.code;
         var errorMsg = error.message;
