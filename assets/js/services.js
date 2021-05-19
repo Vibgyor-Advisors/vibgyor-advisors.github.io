@@ -3,7 +3,7 @@ function Redirect(){
     firebase.auth().onAuthStateChanged(function(user) {
               if (user) {
             
-           location.href='offer.html'
+           location.href='newshome.html'
            
         } 
         else {
