@@ -32,7 +32,7 @@ $(".post-wrapper").slick({
   ],
 });
 
-const api = `https://gnews.io/api/v4/search?q=finance&country=in&token=8f86b72fbd83198c6a5cb1a3e5ab4498`;
+const api = `https://gnews.io/api/v4/search?q=finance&country=in&token=2c7844cedbb5f28289214b307b51ab80`;
 fetch(api)
   .then((response) => {
     return response.json();
