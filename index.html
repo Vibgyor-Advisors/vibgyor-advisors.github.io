@@ -286,11 +286,11 @@
     <!-- End Facebook Pixel Code -->
 
     <!-- Service Worker for fast caching by @subho57 -->
-    <script type="module">
-        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
-
-        const el = document.createElement('pwa-update');
-        document.body.appendChild(el);
+    <script>
+        // load service worker
+        "serviceWorker" in navigator && window.addEventListener("load", () => {
+            navigator.serviceWorker.register("serviceWorker.js").then(e => console.log("Success: ", e.scope)).catch(e => console.log("Failure: ", e))
+        })
     </script>
 
 </head>
