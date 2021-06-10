@@ -1,33 +1,6 @@
 <?php
 require 'dbconfig.php';
 ?>
-<?php
-if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
-?>
-
-  <script>
-    window.location.href = "signup.php";
-  </script>
-<?php }
-
-$info = $con->query("select * from `users` where name='" . $_SESSION['username'] . "' and id=" . $_SESSION['uid']);
-$user = $info->fetch_assoc();
-// $arr = explode(' , ', $user['services']);
-// $user = array('Intraday Calls' => '', 'Sectoral Calls' => '', 'Investment Calls 1' => '', 'Investment Calls 2' => '', 'Short Term Calls' => '');
-// foreach ($arr as $service) {
-//   if ($service == 'Intraday Calls') {
-//     $user[$service] = $user['Intraday Calls']; 
-//   } elseif ($service == 'Sectoral Calls') {
-//     $user[$service] = $user['Sectoral Calls'];
-//   } elseif ($service == 'Short Term Calls') {
-//     $user[$service] = $user['Short Term Calls'];
-//   } elseif ($service == 'Investment Calls 1') {
-//     $user[$service] = $user['Investment Calls 1'];
-//   } elseif ($service == 'Investment Calls 2') {
-//     $user[$service] = $user['Investment Calls 2'];
-//   }
-// }
-?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -121,6 +94,7 @@ $user = $info->fetch_assoc();
     /* .post {
   box-shadow: 0px 15px 20px rgba(112, 112, 112, 0.527);
 } */
+
     .post:hover {
       transform: scale(1.02);
       transition: ease-out 0.25s;
@@ -144,7 +118,6 @@ $user = $info->fetch_assoc();
     .post-slider .post-wrapper .post .post-info {
       padding: 0.5vw;
       z-index: 99;
-
     }
 
     .post-slider .post-wrapper .post .slider-image {
@@ -166,7 +139,7 @@ $user = $info->fetch_assoc();
       min-height: 100%;
     }
 
-    @media only screen and (min-width : 320px) and (max-width : 770px) {
+    @media only screen and (min-width: 320px) and (max-width: 770px) {
       #carouselExampleSlidesOnly img {
         height: 35vh;
       }
@@ -184,7 +157,6 @@ $user = $info->fetch_assoc();
         padding: 0px;
       }
 
-
       .post-info i {
         width: auto;
         padding: 0%;
@@ -198,16 +170,10 @@ $user = $info->fetch_assoc();
         width: fit-content;
       }
 
-
-
       .post-slider .post-wrapper .post .post-info {
         padding: 2.5vw;
         z-index: 99;
       }
-
-
-
-
 
       .sidebar .recent-post-title {
         margin: auto 1.5vw;
@@ -216,7 +182,6 @@ $user = $info->fetch_assoc();
         text-align: center;
         font-size: 26px;
       }
-
     }
 
     @media only screen and (min-width: 770px) and (max-width: 1400px) {
@@ -260,19 +225,10 @@ $user = $info->fetch_assoc();
         border-radius: 2rem;
       }
 
-      .likes {
-        margin: 2%;
-        float: right;
-        width: fit-content;
-      }
-
-
-
       .post-slider .post-wrapper .post .post-info {
         padding: 2.5vw;
         z-index: 99;
       }
-
 
       .sidebar .recent-post-title {
         margin: auto 1.5vw;
@@ -281,13 +237,9 @@ $user = $info->fetch_assoc();
         text-align: center;
         font-size: 26px;
       }
-
-
     }
 
     @media only screen and (max-width: 600px) {
-
-
       .post-slider .next {
         right: 5px;
       }
@@ -295,52 +247,75 @@ $user = $info->fetch_assoc();
       .post-slider .prev {
         left: 5px;
       }
-    }
+    } 
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 2099;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Black w/ opacity */
+      }
 
-    .modal {
-      display: none;
-      /* Hidden by default */
-      position: fixed;
-      /* Stay in place */
-      z-index: 2099;
-      /* Sit on top */
-      padding-top: 100px;
-      /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%;
-      /* Full width */
-      height: 100%;
-      /* Full height */
-      overflow: auto;
-      /* Enable scroll if needed */
-      background-color: rgb(0, 0, 0);
-      /* Fallback color */
-      background-color: rgba(0, 0, 0, 0.9);
-      /* Black w/ opacity */
-    }
+      .modal-content {
+        margin: auto;
+        display: block;
+        width: 50%;
+        max-width: 500px;
+      }
 
-    .modal-content {
-      margin: auto;
-      display: block;
-      width: 60%;
-      padding: 5%;
-      max-width: 500px;
-
-    }
-
-    .cross {
-      position: absolute;
-      top: 15px;
-      right: 35px;
-      color: #cc2e72;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
+      .cross {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+    
   </style>
+  <?php
+  if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
+  ?>
 
+    <script>
+      window.location.href = "signup.php";
+    </script>
+  <?php }
+
+  $info = $con->query("select * from `users` where name='" . $_SESSION['username'] . "' and id=" . $_SESSION['uid']);
+  $user = $info->fetch_assoc();
+  $arr = explode(' , ', $user['services']);
+  $serve = array('Intraday Calls' => '', 'Sectoral Calls' => '', 'Investment Calls 1' => '', 'Investment Calls 2' => '', 'Short Term Calls' => '');
+  foreach ($arr as $service) {
+    if ($service == 'Intraday Calls') {
+      $serve[$service] = $user['Intraday Calls']; 
+    } elseif ($service == 'Sectoral Calls') {
+      $serve[$service] = $user['Sectoral Calls'];
+    } elseif ($service == 'Short Term Calls') {
+      $serve[$service] = $user['Short Term Calls'];
+    } elseif ($service == 'Investment Calls 1') {
+      $serve[$service] = $user['Investment Calls 1'];
+    } elseif ($service == 'Investment Calls 2') {
+      $serve[$service] = $user['Investment Calls 2'];
+    }
+  }
+  ?>
 </head>
 
 
@@ -378,12 +353,14 @@ $user = $info->fetch_assoc();
 
           <div class="single-service service__style--4 large-size text-center">
             <a onclick='<?php
-                        if(strpos($user['services'], 'Intraday Calls') !== false) {
-                          echo 'redirect("service/?service=Intraday Calls&uid=' . $user['id'] . '")';
-                        } else {
-                          echo 'modal()';
-                        }
-                        ?>'>
+                        // if ($serve['Intraday Calls']) {
+                       
+                        //           echo 'redirect("intra.php")';
+                                
+                        //     } else {
+                        //         echo 'modal()';
+                        //    }
+                            ?>'>
               <div class="service">
                 <div class="icon">
                   <i data-feather="cast"></i>
@@ -395,131 +372,122 @@ $user = $info->fetch_assoc();
               </div>
             </a>
           </div>
-        </div>
-        <!-- End Single Service  -->
+          <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
 
-        <!-- Start Single Service  -->
-        <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
-
-          <div class="single-service service__style--4 large-size text-center">
-            <a onclick='<?php
-                         if(strpos($user['services'], 'Short Term Calls') !== false) {
-                          echo 'redirect("service/?service=Short Term Calls&uid=' . $user['id'] . '")';
-                        } else {
-                          echo 'modal()';
-                        }
-                        ?>'>
-              <div class="service">
-                <div class="icon">
-                  <i data-feather="layers"></i>
+            <div class="single-service service__style--4 large-size text-center">
+              <a href="offer.html">
+                <div class="service">
+                  <div class="icon">
+                    <i data-feather="cast"></i>
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="600" class="content">
+                    <h3 class="title">Intraday Calls</h3>
+                    <p></p>
+                  </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="600" class="content">
-                  <h3 class="title">Short Term Calls</h3>
-                  <p></p>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
-        </div>
-        <!-- End Single Service  -->
+          <!-- End Single Service  -->
 
-        <!-- Start Single Service  -->
-        <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
+          <!-- Start Single Service  -->
+          <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
 
-          <div class="single-service service__style--4 large-size text-center">
-            <a onclick='<?php
-                         if(strpos($user['services'], 'Investment Calls 1') !== false) {
-                          echo 'redirect("service/?service=Investment Calls 1&uid=' . $user['id'] . '")';
-                        } else {
-                          echo 'modal()';
-                        }
-                        ?>'>
-              <div class="service">
-                <div class="icon">
-                  <i data-feather="monitor"></i>
+            <div class="single-service service__style--4 large-size text-center">
+              <a href="offer.html">
+                <div class="service">
+                  <div class="icon">
+                    <i data-feather="layers"></i>
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="600" class="content">
+                    <h3 class="title">Short Term Calls</h3>
+                    <p></p>
+                  </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="600" class="content">
-                  <h3 class="title">Investment Calls 1</h3>
-                  <p>
-
-                  </p>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
-        </div>
-        <!-- End Single Service  -->
+          <!-- End Single Service  -->
 
-        <!-- Start Single Service  -->
-        <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
+          <!-- Start Single Service  -->
+          <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
 
-          <div class="single-service service__style--4 large-size text-center">
-            <a onclick='<?php
-                         if(strpos($user['services'], 'Investmet Calls 2') !== false) {
-                          echo 'redirect("service/?service=Investment Calls 2&uid=' . $user['id'] . '")';
-                        } else {
-                          echo 'modal()';
-                        }
-                        ?>'>
-              <div class="service">
-                <div class="icon">
-                  <i data-feather="activity"></i>
+            <div class="single-service service__style--4 large-size text-center">
+              <a href="offer.html">
+                <div class="service">
+                  <div class="icon">
+                    <i data-feather="monitor"></i>
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="600" class="content">
+                    <h3 class="title">Investment Calls 1</h3>
+                    <p>
+
+                    </p>
+                  </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="600" class="content">
-                  <h3 class="title">Investment Calls 2
-                  </h3>
-                  <p></p>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
-        </div>
-        <!-- End Single Service  -->
-        <!-- Start Single Service  -->
-        <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
+          <!-- End Single Service  -->
 
-          <div class="single-service service__style--4 large-size text-center">
-            <a onclick='<?php
-                         if(strpos($user['services'], 'Sectoral Calls') !== false) {
-                          echo 'redirect("service/?service=Sectoral Calls&uid=' . $user['id'] . '")';
-                        } else {
-                          echo 'modal()';
-                        }
-                        ?>'>
-              <div class="service">
-                <div class="icon">
-                  <i data-feather="phone"></i>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="600" class="content">
-                  <h3 class="title">Sectoral Calls
-                  </h3>
-                  <p></p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- End Single Service  -->
-        <!-- Start Single Service  -->
-        <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
+          <!-- Start Single Service  -->
+          <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
 
-          <div class="single-service service__style--4 large-size text-center">
-            <a>
-              <div class="service">
-                <div class="icon">
-                  <i data-feather="check"></i>
+            <div class="single-service service__style--4 large-size text-center">
+              <a href="offer.html">
+                <div class="service">
+                  <div class="icon">
+                    <i data-feather="activity"></i>
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="600" class="content">
+                    <h3 class="title">Investment Calls 2
+                    </h3>
+                    <p></p>
+                  </div>
                 </div>
-                <div data-aos="fade-up" data-aos-duration="600" class="content">
-                  <h3 class="title">Portfolio Health Checkup
-                  </h3>
-                  <p></p>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
           </div>
+          <!-- End Single Service  -->
+          <!-- Start Single Service  -->
+          <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
+
+            <div class="single-service service__style--4 large-size text-center">
+              <a href="offer.html">
+                <div class="service">
+                  <div class="icon">
+                    <i data-feather="phone"></i>
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="600" class="content">
+                    <h3 class="title">Sectoral Calls
+                    </h3>
+                    <p></p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- End Single Service  -->
+          <!-- Start Single Service  -->
+          <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
+
+            <div class="single-service service__style--4 large-size text-center">
+              <a href="offer.html">
+                <div class="service">
+                  <div class="icon">
+                    <i data-feather="check"></i>
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="600" class="content">
+                    <h3 class="title">Portfolio Health Checkup
+                    </h3>
+                    <p></p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- End Single Service  -->
         </div>
-        <!-- End Single Service  -->
-      </div>
     </section>
     <section>
       <!-- Start Post Slider -->
@@ -550,8 +518,6 @@ $user = $info->fetch_assoc();
             </div>
           </div> -->
 
-
-
         </div>
       </div>
       <!-- End Post Slider -->
@@ -580,9 +546,9 @@ $user = $info->fetch_assoc();
         <div class="col-sm-12 col-md-4">
           <h6>Connect Us</h6>
           <ul class="footer-links">
-            <li><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
-            <li><i class="fas fa-phone"></i>&emsp;9324361956</li>
-            <li><i class="fas fa-tty"></i>&emsp;022-79615327</li>
+            <li onclick="location.href='mailto:info@vibgyoradvisors.com'"><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
+            <li onclick="location.href='tel:9324361956'"><i class="fas fa-phone"></i>&emsp;9324361956</li>
+            <li onclick="location.href='tel:022-79615327'"><i class="fas fa-tty"></i>&emsp;022-79615327</li>
           </ul>
         </div>
 
@@ -597,7 +563,7 @@ $user = $info->fetch_assoc();
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
-          <p class="copyright-text"> Division of Vibgyor Advicorpr PVT Limited &copy; 2019
+          <p class="copyright-text"> Division of Vibgyor Advicorp PVT Limited &copy; 2019
 
           </p>
         </div>
@@ -614,14 +580,14 @@ $user = $info->fetch_assoc();
     </div>
   </footer>
   <!-- Footer -->
-  <div id="myModal" class="modal">
+  <!-- <div id="myModal" class="modal">
     <span class="cross">&times;</span>
-    <div class="modal-content">
-      <h5 style="color:#cc2e72;">You haven't subscribed for this plan!!
-        Kindly pay for to avail this service!!</h5>
-    </div>
+    <h1>
+      You haven't subscribed for this plan!!
+      Kindly pay for this service!!
+    </h1>
 
-  </div>
+  </div> -->
 </div>
 
 <!-- JS -->
@@ -648,22 +614,20 @@ $user = $info->fetch_assoc();
   AOS.init();
 </script>
 <script>
-  function modal() {
+  function modal(){
+                         modal.style.display = "block";
+                              
+ 
+                  }
+                    var span = document.getElementsByClassName("cross");
 
-    document.getElementsByClassName('modal')[0].style.display = "block";
 
-
-  }
-  var span = document.getElementsByClassName("cross")[0];
-
-
-  span.onclick = function() {
-    document.getElementsByClassName('modal')[0].style.display = "none";
-  }
-
-  function redirect(str) {
-    window.location.href = str;
-  }
+                          span.onclick = function() {
+                          modal.style.display = "none";
+                                   }
+                     function redirect(str){
+                       window.location.href=str;
+                     }              
 </script>
 <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
