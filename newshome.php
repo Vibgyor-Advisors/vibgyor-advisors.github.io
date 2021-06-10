@@ -1,3 +1,6 @@
+<?php
+           
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -294,7 +297,7 @@
         <div class="row">
             <!-- Start Single Service  -->
             <div class="col-lg-12" style="margin: 5%;">
-                <h2 style="text-align: center;">Just a sneek peek of Our Services</h2>
+                <h2 style="text-align: center;">Our Services</h2>
             </div>
             <div data-aos="fade-up" data-aos-duration="500" class="col-lg-6 col-md-6 col-sm-6 col-12">
     

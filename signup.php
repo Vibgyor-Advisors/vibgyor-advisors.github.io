@@ -1,3 +1,32 @@
+<?php
+require 'dbconfig.php';
+if (isset($_POST['logsubmit'])) {
+
+    $email = $_POST['logemail'];
+    $pass = $_POST['logpassword'];
+   
+
+    $name = $con->query("select * from `users` where email='" . $email . "' and password='" . $pass . "'");
+    $user = $name->fetch_assoc();
+
+    if ($name->num_rows != 0) {
+        $_SESSION['username'] = $user['name'];
+        $_SESSION['uid'] = $user['id'];
+        ?>
+        <script>
+            window.location.href = "newshome.php";
+        </script>
+    <?php
+    } 
+    else {
+    ?>
+        <script>
+            alert('Invalid Email Address or Password!\nOr Your Account might be Deactivated!\nContact System Administrator');
+        </script>
+        <?php
+    }
+}
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -307,7 +336,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="login-popup">
+                        <form class="login-popup" method="post">
                             <div class="box2">
 
                                 <!-- <div class="sign-head">
@@ -317,38 +346,13 @@
                                 <div class="box">
                                     <div class="form log active">
                                         <h1>Log In</h1>
-                                        <input type="text" id="logemail" placeholder="Email *" class="form-control" required>
-                                        <input type="password" id="logpassword" placeholder="Password *" class="form-control" required>
-                                        <a id="forgot">Forgot Password?</a>
-
-                                        <button id="logsubmit" type="submit" class="submit">Submit</button>
-
-                                        <div class="separator">or login with</div>
-
-                                        <ul class="social-network social-circle">
-
-                                            <li><a id="googlelog" class="icon-google"><i class="fab fa-google"></i></a></li>
-                                        </ul>
+                                        <input type="text" name="logemail" id="logemail" placeholder="Email *" class="form-control" required>
+                                        <input type="password" name="logpassword" id="logpassword" placeholder="Password *" class="form-control" required>
+                                        <button name="logsubmit" type="submit" class="submit" >Submit</button>
                                     </div>
-
-                                    <div class="form sign">
-                                        <h1>Sign Up</h1>
-                                        <input type="text" id="firstname" placeholder="First Name *" class="form-control" required>
-                                        <input type="text" id="lastname" placeholder="Last Name *" class="form-control" required>
-                                        <input type="text" id="email" placeholder="Email *" class="form-control" required>
-                                        <input type="password" id="password" placeholder="Password *" class="form-control" required>
-                                        <br>
-                                        <button id="signsubmit" type="submit" class="submit">Submit</button>
-                                        <br>
-                                    </div>
-
-                                    <button type="button" class="btn signbtn">Sign Up</button>
-                                    <button type="button" class="btn logbtn activebtn">Log In</button>
-
                                 </div>
-
                             </div>
-                        </div>
+                         </form> 
                     </div>
                 </div>
             </div>

@@ -1,14 +1,16 @@
 function Redirect(){
+         
+      location.href='offer.html'
     
-    firebase.auth().onAuthStateChanged(function(user) {
-              if (user) {
+    // firebase.auth().onAuthStateChanged(function(user) {
+    //           if (user) {
             
-           location.href='newshome.html'
+    //        location.href='newshome.html'
            
-        } 
-        else {
-          location.href='signup.html'
+    //     } 
+    //     else {
+    //       location.href='signup.html'
           
-        }
-      });
+    //     }
+    //   });
 }
