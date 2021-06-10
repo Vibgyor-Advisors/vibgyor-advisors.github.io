@@ -308,7 +308,7 @@ if (isset($_POST['logsubmit'])) {
                         <a class="nav-link" href="connect.html">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="signup.html">Sign Up</a>
+                        <a class="nav-link" href="signup.php">Log In</a>
                     </li>
                 </ul>
             </div>
