@@ -380,9 +380,9 @@ if (isset($_POST['logsubmit'])) {
                     <div class="col-sm-12 col-md-4">
                         <h6>Connect Us</h6>
                         <ul class="footer-links">
-                            <li><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
-                            <li><i class="fas fa-phone"></i>&emsp;9324361956</li>
-                            <li><i class="fas fa-tty"></i>&emsp;022-79615327</li>
+                            <li onclick="location.href='mailto:info@vibgyoradvisors.com'"><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
+                            <li onclick="location.href='tel:9324361956'"><i class="fas fa-phone"></i>&emsp;9324361956</li>
+                            <li onclick="location.href='tel:022-79615327'"><i class="fas fa-tty"></i>&emsp;022-79615327</li>
                         </ul>
                     </div>
 
@@ -398,7 +398,7 @@ if (isset($_POST['logsubmit'])) {
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text"> Division of Vibgyor Advicorpr PVT Limited &copy; 2019
+                        <p class="copyright-text"> Division of Vibgyor Advicorp PVT Limited &copy; 2019
 
                         </p>
                     </div>
@@ -440,30 +440,30 @@ if (isset($_POST['logsubmit'])) {
     <script>
         AOS.init();
     </script>
-     <script>
-         document.querySelector(".signbtn").addEventListener("click", function () {
-  document.querySelector(".sign").classList.add("active");
-  document.querySelector(".signbtn").classList.add("activebtn");
-  document.querySelector(".log").classList.remove("active");
-  document.querySelector(".logbtn").classList.remove("activebtn");
-});
+    <script>
+        document.querySelector(".signbtn").addEventListener("click", function() {
+            document.querySelector(".sign").classList.add("active");
+            document.querySelector(".signbtn").classList.add("activebtn");
+            document.querySelector(".log").classList.remove("active");
+            document.querySelector(".logbtn").classList.remove("activebtn");
+        });
 
-document.querySelector(".logbtn").addEventListener("click", function () {
-  document.querySelector(".log").classList.add("active");
-  document.querySelector(".logbtn").classList.add("activebtn");
-  document.querySelector(".sign").classList.remove("active");
-  document.querySelector(".signbtn").classList.remove("activebtn");
-});
-     </script>
-       
-       <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-       <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+        document.querySelector(".logbtn").addEventListener("click", function() {
+            document.querySelector(".log").classList.add("active");
+            document.querySelector(".logbtn").classList.add("activebtn");
+            document.querySelector(".sign").classList.remove("active");
+            document.querySelector(".signbtn").classList.remove("activebtn");
+        });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
     <script src="/assets/js/firebase.js"></script>
-       <script src="assets/js/login.js"></script>
-      
+    <script src="assets/js/login.js"></script>
+
 </body>
 
 </html>

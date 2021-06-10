@@ -285,6 +285,14 @@
     </script>
     <!-- End Facebook Pixel Code -->
 
+    <!-- Service Worker for fast caching by @subho57 -->
+    <script>
+        // load service worker
+        "serviceWorker" in navigator && window.addEventListener("load", () => {
+            navigator.serviceWorker.register("serviceWorker.js").then(e => console.log("Success: ", e.scope)).catch(e => console.log("Failure: ", e))
+        })
+    </script>
+
 </head>
 
 <body>
@@ -490,9 +498,9 @@
                     <div class="col-sm-12 col-md-4">
                         <h6>Connect Us</h6>
                         <ul class="footer-links">
-                            <li><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
-                            <li><i class="fas fa-phone"></i>&emsp;9324361956</li>
-                            <li><i class="fas fa-tty"></i>&emsp;022-79615327</li>
+                            <li onclick="location.href='mailto:info@vibgyoradvisors.com'"><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
+                            <li onclick="location.href='tel:9324361956'"><i class="fas fa-phone"></i>&emsp;9324361956</li>
+                            <li onclick="location.href='tel:022-79615327'"><i class="fas fa-tty"></i>&emsp;022-79615327</li>
                         </ul>
                     </div>
 
@@ -508,7 +516,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text"> Division of Vibgyor Advicorpr PVT Limited &copy; 2019
+                        <p class="copyright-text"> Division of Vibgyor Advicorp PVT Limited &copy; 2019
 
                         </p>
                     </div>
@@ -526,54 +534,54 @@
         </footer>
         <!-- Footer -->
 
-    </div>
+        </div>
 
-    <!-- JS -->
-    <!-- Modernizer JS -->
-    <script src="/assets/js/vendor/modernizr.min.js"></script>
-    <!-- jQuery JS -->
-    <script src="/assets/js/vendor/jquery.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="/assets/js/vendor/stellar.js"></script>
-    <script src="/assets/js/vendor/particles.js"></script>
-    <script src="/assets/js/vendor/masonry.js"></script>
-    <script src="/assets/js/vendor/stickysidebar.js"></script>
-    <script src="/assets/js/plugins/plugins.min.js"></script>
-    <script src="/assets/js/vendor/mdb.min.js"></script>
-    <!-- Main JS -->
-    <script src="/assets/js/main.js"></script>
-    <script src="/assets/js/lazyload.js"></script>
+        <!-- JS -->
+        <!-- Modernizer JS -->
+        <script src="/assets/js/vendor/modernizr.min.js"></script>
+        <!-- jQuery JS -->
+        <script src="/assets/js/vendor/jquery.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="/assets/js/vendor/bootstrap.min.js"></script>
+        <script src="/assets/js/vendor/stellar.js"></script>
+        <script src="/assets/js/vendor/particles.js"></script>
+        <script src="/assets/js/vendor/masonry.js"></script>
+        <script src="/assets/js/vendor/stickysidebar.js"></script>
+        <script src="/assets/js/plugins/plugins.min.js"></script>
+        <script src="/assets/js/vendor/mdb.min.js"></script>
+        <!-- Main JS -->
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/lazyload.js"></script>
 
-    <script>
-        // Slide every slideDelay seconds
-        const slideDelay = 10000;
+        <script>
+            // Slide every slideDelay seconds
+            const slideDelay = 10000;
 
-        const dynamicSlider = document.getElementById("slider");
+            const dynamicSlider = document.getElementById("slider");
 
-        var curSlide = 0;
-        window.setInterval(() => {
-            curSlide++;
-            if (curSlide === dynamicSlider.childElementCount) {
-                curSlide = 0;
-            }
+            var curSlide = 0;
+            window.setInterval(() => {
+                curSlide++;
+                if (curSlide === dynamicSlider.childElementCount) {
+                    curSlide = 0;
+                }
 
-            // Actual slide
-            dynamicSlider.firstElementChild.style.setProperty("margin-left", "-" + curSlide + "00%");
-        }, slideDelay);
-    </script>
- 
-    <script src="/assets/js/vendor/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-     
-     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
-  <script src="/assets/js/firebase.js"></script>
+                // Actual slide
+                dynamicSlider.firstElementChild.style.setProperty("margin-left", "-" + curSlide + "00%");
+            }, slideDelay);
+        </script>
+
+        <script src="/assets/js/vendor/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+        <script src="/assets/js/firebase.js"></script>
 </body>
 
 </html>
