@@ -9,8 +9,8 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
     </script>
     <?php
 } else {
-    if (isset($_GET['service']) && isset($_GET['uid'])) {
-        // echo '<h1>' . $_GET['service'] . '</h1>';
+    if (isset($_GET['service'])) {
+        // echo '<h1>' . $_GET['service'] . '</h1>';u there?
     ?>
         <html>
 
@@ -35,6 +35,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
             <title><?php echo $_GET['service']; ?></title>
+
             <style>
                 #fontsty {
                     cursor: pointer;
@@ -94,6 +95,18 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                 .sectioncolor2 {
                     background-color: rgb(253, 250, 250)
                 }
+
+                .heading {
+                    margin-top: 10%;
+                    text-align: center;
+                }
+
+                @media (max-width:900px) {
+                    .heading {
+                        margin-top: 28%;
+                        text-align: center;
+                    }
+                }
             </style>
         </head>
 
@@ -117,24 +130,24 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                         </ul>
                     </div>
                 </nav>
-               
-                   
-                     <?php  
-                     echo '<h1 style="margin:10%;text-align:center;">' . $_GET['service'] . '</h1>'
-                     ?>
-                      
 
-                    <div class="container" style="padding:10px 10px;margin-bottom:10%;">
 
-                        <div id="header"></div>
-                        <div class="well">
-                            <div class="row" id="csv-display" style="height:500px;overflow: scroll;">
-                            </div>
+                <?php
+                echo '<h1 class="heading">' . $_GET['service'] . '</h1>'
+                ?>
+
+
+                <div class="container" style="padding:10px 10px;margin-bottom:10%;">
+
+                    <div id="header"></div>
+                    <div class="well">
+                        <div class="row" id="csv-display" style="height:500px;overflow: scroll;">
                         </div>
-
-
                     </div>
-                
+
+
+                </div>
+
                 <!-- Footer -->
                 <footer class="site-footer">
                     <div class="container">
@@ -152,9 +165,9 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                             <div class="col-sm-12 col-md-4">
                                 <h6>Connect Us</h6>
                                 <ul class="footer-links">
-                                    <li onclick="location.href='mailto:info@vibgyoradvisors.com'"><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
-                                    <li onclick="location.href='tel:9324361956'"><i class="fas fa-phone"></i>&emsp;9324361956</li>
-                                    <li onclick="location.href='tel:022-79615327'"><i class="fas fa-tty"></i>&emsp;022-79615327</li>
+                                    <li><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
+                                    <li><i class="fas fa-phone"></i>&emsp;9324361956</li>
+                                    <li><i class="fas fa-tty"></i>&emsp;022-79615327</li>
                                 </ul>
                             </div>
 
@@ -169,7 +182,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-sm-6 col-xs-12">
-                                <p class="copyright-text"> Division of Vibgyor Advicorp PVT Limited &copy; 2019
+                                <p class="copyright-text"> Division of Vibgyor Advicorpr PVT Limited &copy; 2019
 
                                 </p>
                             </div>
@@ -189,10 +202,11 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
             </div>
 
             <script type="text/javascript">
-                var data;
+                var data, pel, i;
                 <?php
-                $service = $con->query("select `" . $_GET['service'] . "` from users where id=" . $_GET['uid'])->fetch_assoc()[$_GET['service']];
-                $service = 'docs/' . $service;
+                $service = $con->query("select csv from `Services` where service='" . $_GET['service'] . "'")->fetch_assoc()['csv'];
+                // $service = 'docs/' . $service; 
+                $service = './import_intern.csv'
                 ?>
                 $.ajax({
                     type: "GET",
@@ -200,6 +214,8 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                     dataType: "text",
                     success: function(response) {
                         data = $.csv.toArrays(response);
+
+
                         generateHtmlTable(data);
                     }
                 });
@@ -211,7 +227,19 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                         return null;
                     } else {
                         $.each(data, function(index, row) {
-                            //bind header
+
+                            const start_date = new Date('08-10-2020'),
+                                end_date = new Date('09-17-2020');
+                            if (index > 0) {
+                                var key = new Date(data[index][3]);
+                                console.log("Start Day=", start_date);
+                                console.log("End Date=", end_date);
+                                console.log("Key Date=", key);
+                                if(start_date > key || end_date < key) {
+                                return;
+                                }
+                            }
+
                             if (index == 0) {
                                 html += '<thead>';
                                 html += '<tr>';
@@ -226,16 +254,19 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                             } else {
                                 html += '<tr>';
                                 $.each(row, function(index, colData) {
+
                                     html += '<td>';
                                     html += colData;
                                     html += '</td>';
+
+
                                 });
                                 html += '</tr>';
                             }
                         });
                         html += '</tbody>';
                         html += '</table>';
-                        alert(html);
+
                         $('#csv-display').append(html);
                     }
                 }
@@ -257,23 +288,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
             <script src="../assets/js/main.js"></script>
             <script src="../assets/js/lazyload.js"></script>
 
-            <script>
-                // Slide every slideDelay seconds
-                const slideDelay = 10000;
 
-                const dynamicSlider = document.getElementById("slider");
-
-                var curSlide = 0;
-                window.setInterval(() => {
-                    curSlide++;
-                    if (curSlide === dynamicSlider.childElementCount) {
-                        curSlide = 0;
-                    }
-
-                    // Actual slide
-                    dynamicSlider.firstElementChild.style.setProperty("margin-left", "-" + curSlide + "00%");
-                }, slideDelay);
-            </script>
 
             <script src="/assets/js/vendor/aos.js"></script>
             <script>
@@ -286,14 +301,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
 
 
             <script src="js/nav.js "></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js " integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p " crossorigin="anonymous "></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js " integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT " crossorigin="anonymous "></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
-            <script src="../assets/js/firebase.js"></script>
+
             <script src="../assets/js/services.js"></script>
 
         </body>
