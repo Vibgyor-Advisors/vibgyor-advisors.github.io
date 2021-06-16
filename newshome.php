@@ -379,7 +379,7 @@ $user = $info->fetch_assoc();
           <div class="single-service service__style--4 large-size text-center">
             <a onclick='<?php
                         if(strpos($user['services'], 'Intraday Calls') !== false) {
-                          echo 'redirect("service/?service=Intraday Calls")';
+                          echo 'redirect("service/?service=Intraday Calls&uid=' . $_SESSION['uid'] . '")';
                         } else {
                           echo 'modal()';
                         }
@@ -404,7 +404,7 @@ $user = $info->fetch_assoc();
           <div class="single-service service__style--4 large-size text-center">
             <a onclick='<?php
                          if(strpos($user['services'], 'Short Term Calls') !== false) {
-                          echo 'redirect("service/?service=Short Term Calls")';
+                          echo 'redirect("service/?service=Short Term Calls&uid=' . $_SESSION['uid'] . '")';
                         } else {
                           echo 'modal()';
                         }
@@ -429,7 +429,7 @@ $user = $info->fetch_assoc();
           <div class="single-service service__style--4 large-size text-center">
             <a onclick='<?php
                          if(strpos($user['services'], 'Investment Calls 1') !== false) {
-                          echo 'redirect("service/?service=Investment Calls 1")';
+                          echo 'redirect("service/?service=Investment Calls 1&uid=' . $_SESSION['uid'] . '")';
                         } else {
                           echo 'modal()';
                         }
@@ -456,7 +456,7 @@ $user = $info->fetch_assoc();
           <div class="single-service service__style--4 large-size text-center">
             <a onclick='<?php
                          if(strpos($user['services'], 'Investmet Calls 2') !== false) {
-                          echo 'redirect("service/?service=Investment Calls 2")';
+                          echo 'redirect("service/?service=Investment Calls 2&uid=' . $_SESSION['uid'] . '")';
                         } else {
                           echo 'modal()';
                         }
@@ -481,7 +481,7 @@ $user = $info->fetch_assoc();
           <div class="single-service service__style--4 large-size text-center">
             <a onclick='<?php
                          if(strpos($user['services'], 'Sectoral Calls') !== false) {
-                          echo 'redirect("service/?service=Sectoral Calls")';
+                          echo 'redirect("service/?service=Sectoral Calls&uid=' . $_SESSION['uid'] . '")';
                         } else {
                           echo 'modal()';
                         }
