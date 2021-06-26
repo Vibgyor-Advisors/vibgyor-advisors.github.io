@@ -166,7 +166,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                             <h6>Connect Us</h6>
                             <ul class="footer-links">
                                 <li><i class="fas fa-envelope"></i>&emsp;info@vibgyoradvisors.com</li>
-                                <li><i class="fas fa-phone"></i>&emsp;9324361956</li>
+                                <li><i class="fas fa-phone"></i>&emsp;8591402580</li>
                                 <li><i class="fas fa-tty"></i>&emsp;022-79615327</li>
                             </ul>
                         </div>
