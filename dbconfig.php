@@ -5,10 +5,10 @@ if (session_status() == PHP_SESSION_NONE) {
 /**
  * Change these details according to your server
  */
-$server = "3.108.41.225";
-$username = "VibgyorRemoteAdmin";
-$password = "Vibgyor555";
-$database = "subscription";
+$server = "localhost";
+$username = "ydret2xc8uzx";
+$password = "Sachin@101";
+$database = "internal_dashboard";
 $protocol = "https://";
 
 $port = 3306;
