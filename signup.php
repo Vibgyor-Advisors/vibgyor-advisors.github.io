@@ -6,7 +6,7 @@ if (isset($_POST['logsubmit'])) {
     $pass = $_POST['logpassword'];
    
 
-    $name = $con->query("select * from `users` where email='" . $email . "' and password='" . $pass . "'");
+    $name = $con->query("select * from `subscriber` where email='" . $email . "' and password='" . $pass . "'");
     $user = $name->fetch_assoc();
 
     if ($name->num_rows != 0) {

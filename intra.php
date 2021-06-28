@@ -9,7 +9,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
     </script>
 <?php }
 
-$info = $con->query("select * from `users` where name='" . $_SESSION['username'] . "' and id=" . $_SESSION['uid']);
+$info = $con->query("select * from `subscriber` where name='" . $_SESSION['username'] . "' and id=" . $_SESSION['uid']);
 $user = $info->fetch_assoc();
 // $arr = explode(' , ', $user['services']);
 // $user = array('Intraday Calls' => '', 'Sectoral Calls' => '', 'Investment Calls 1' => '', 'Investment Calls 2' => '', 'Short Term Calls' => '');

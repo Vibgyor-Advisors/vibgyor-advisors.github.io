@@ -205,8 +205,8 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
             var data, pel, i;
             <?php
             $service = $con->query("select csv from `Services` where service='" . $_GET['service'] . "'")->fetch_assoc()['csv'];
-            // $service = 'docs/' . $service; 
-            $service = './import_intern.csv'
+            $service = 'docs/' . $service;
+            // $service = './import_intern.csv'
             ?>
             $.ajax({
                 type: "GET",
