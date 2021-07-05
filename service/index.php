@@ -141,7 +141,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
 
                 <div id="header"></div>
                 <div class="well">
-                    <div class="row" id="csv-display" style="height:500px;overflow: scroll;">
+                    <div class="row" id="csv-display" style="height:500px;overflow: scroll; ">
                     </div>
                 </div>
 
@@ -221,7 +221,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
             });
 
             function generateHtmlTable(data) {
-                var html = '<table  class="table table-condensed table-hover table-striped">';
+                var html = '<table  class="table table-condensed table-hover table-striped" style="font-size:0.8rem;" >';
 
                 if (typeof(data[0]) === 'undefined') {
                     return null;
