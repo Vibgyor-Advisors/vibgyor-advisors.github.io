@@ -219,7 +219,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                     generateHtmlTable(data);
                 }
             });
-
+                //font-size change
             function generateHtmlTable(data) {
                 var html = '<table  class="table table-condensed table-hover table-striped" style="font-size:0.8rem;" >';
 
