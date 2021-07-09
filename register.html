@@ -1,48 +1,9 @@
-<?php
-require 'dbconfig.php';
-if (isset($_POST['logsubmit'])) {
-
-    $email = $_POST['logemail'];
-    $pass = $_POST['logpassword'];
-   
-
-    $name = $con->query("select * from `subscriber` where email='" . $email . "' and password='" . $pass . "'");
-    $user = $name->fetch_assoc();
-
-    if ($name->num_rows != 0) {
-        $_SESSION['username'] = $user['name'];
-        $_SESSION['uid'] = $user['id'];
-        ?>
-        <script>
-            window.location.href = "newshome.php";
-        </script>
-    <?php
-    } 
-    else {
-    ?>
-        <script>
-            alert('Invalid Email Address or Password!\nOr Your Account might be Deactivated!\nContact System Administrator');
-        </script>
-        <?php
-    }
-}
-?>
 <!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWE3C8BVZB"></script> -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-WWE3C8BVZB');
-    </script>
 
 
     <meta charset="utf-8">
@@ -63,28 +24,7 @@ if (isset($_POST['logsubmit'])) {
     <link rel="stylesheet" href="/assets/css/vendor/mdb.min.css">
     <link rel="stylesheet" href="/assets/css/vendor/aos.css">
     <!-- Facebook Pixel Code -->
-    <script>
-        ! function(f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function() {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '223792792397151');
-        fbq('track', 'PageView');
-    </script>
+
     <!-- End Facebook Pixel Code -->
     <style>
         .separator {
@@ -345,15 +285,16 @@ if (isset($_POST['logsubmit'])) {
 
                                 <div class="box">
                                     <div class="form log active">
-                                        <h1>Log In</h1>
+                                        <h1>Sign Up</h1>
+                                        <input type="text" name="name" id="name" placeholder="Name *" class="form-control" required>
                                         <input type="text" name="logemail" id="logemail" placeholder="Email *" class="form-control" required>
                                         <input type="password" name="logpassword" id="logpassword" placeholder="Password *" class="form-control" required>
-                                        <button name="logsubmit" type="submit" class="submit" >Submit</button>
-                                        <!-- <button name="logsubmit" type="button" class="submit" style="background-color: #cc2e72;" >Register</button> -->
+                                        <!-- <button name="logsubmit" type="submit" class="submit">Submit</button> -->
+                                        <button name="logsubmit" type="button" class="submit" style="background-color: #cc2e72;">Register</button>
                                     </div>
                                 </div>
                             </div>
-                         </form> 
+                        </form>
                     </div>
                 </div>
             </div>
@@ -441,21 +382,7 @@ if (isset($_POST['logsubmit'])) {
     <script>
         AOS.init();
     </script>
-    <script>
-        document.querySelector(".signbtn").addEventListener("click", function() {
-            document.querySelector(".sign").classList.add("active");
-            document.querySelector(".signbtn").classList.add("activebtn");
-            document.querySelector(".log").classList.remove("active");
-            document.querySelector(".logbtn").classList.remove("activebtn");
-        });
 
-        document.querySelector(".logbtn").addEventListener("click", function() {
-            document.querySelector(".log").classList.add("active");
-            document.querySelector(".logbtn").classList.add("activebtn");
-            document.querySelector(".sign").classList.remove("active");
-            document.querySelector(".signbtn").classList.remove("activebtn");
-        });
-    </script>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
