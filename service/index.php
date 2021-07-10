@@ -231,7 +231,7 @@ if (empty($_SESSION['username']) || empty($_SESSION['uid'])) {
                         const start_date = new Date('<?php echo START_DATE; ?>'),
                             end_date = new Date('<?php echo END_DATE; ?>');
                         if (index > 0) {
-                            var key = new Date(data[index][3]);
+                            var key = new Date(data[index][0]);
                             console.log("Start Day=", start_date);
                             console.log("End Date=", end_date);
                             console.log("Key Date=", key);
