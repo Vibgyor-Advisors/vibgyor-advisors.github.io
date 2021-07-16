@@ -602,6 +602,51 @@
         <script src="/assets/js/firebase.js"></script>
         <script src="/assets/js/services.js"></script>
 
+         <script src="/assets/js/vendor/modernizr.min.js"></script>
+        <!-- jQuery JS -->
+        <script src="/assets/js/vendor/jquery.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="/assets/js/vendor/bootstrap.min.js"></script>
+        <script src="/assets/js/vendor/stellar.js"></script>
+        <script src="/assets/js/vendor/particles.js"></script>
+        <script src="/assets/js/vendor/masonry.js"></script>
+        <script src="/assets/js/vendor/stickysidebar.js"></script>
+        <script src="/assets/js/plugins/plugins.min.js"></script>
+        <script src="/assets/js/vendor/mdb.min.js"></script>
+        <!-- Main JS -->
+        <script src="/assets/js/main.js"></script>
+        <script src="/assets/js/lazyload.js"></script>
+
+        <script>
+            // Slide every slideDelay seconds
+            const slideDelay = 10000;
+
+            const dynamicSlider = document.getElementById("slider");
+
+            var curSlide = 0;
+            window.setInterval(() => {
+                curSlide++;
+                if (curSlide === dynamicSlider.childElementCount) {
+                    curSlide = 0;
+                }
+
+                // Actual slide
+                dynamicSlider.firstElementChild.style.setProperty("margin-left", "-" + curSlide + "00%");
+            }, slideDelay);
+        </script>
+
+        <script src="/assets/js/vendor/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+        <script src="/assets/js/firebase.js"></script>
+
 </body>
 
 </html>
